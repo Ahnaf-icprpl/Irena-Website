@@ -229,8 +229,8 @@
 /* Up Right Corner Framing Graphic */
 .corner-framing-top-right {
   position: absolute;
-  top: -125px;
-  right: -36px;
+  top: -122px;
+  right: -50px;
   z-index: 10;
   pointer-events: none;
 }
@@ -245,8 +245,8 @@
 /* Down Left Corner Framing Graphic */
 .corner-framing-bottom-left {
   position: absolute;
-  bottom: -12px;
-  left: -12px;
+  bottom: -70px;
+  left: -60px;
   z-index: 10;
   pointer-events: none;
 }
@@ -254,6 +254,6 @@
 .corner-framing-bottom-left img {
   display: block;
   width: auto;
-  height: auto;
-  max-height: 600px;
+  height: 616px;
+  max-height: none;
 }
