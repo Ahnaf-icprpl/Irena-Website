@@ -217,6 +217,22 @@
       max-height: 420px;
     }
 
+    /* Hero Partial Face Graphic (Stuck to top of rectangle, 60% visible above, rest behind) */
+    .hero-partial-face {
+      position: absolute;
+      left: 60px;
+      top: 0;
+      transform: translateY(-60%);
+      z-index: 1;
+      pointer-events: none;
+    }
+
+    .hero-partial-face img {
+      display: block;
+      height: auto;
+      max-height: 240px;
+    }
+
     @keyframes fadeInFromAbove {
       from {
         opacity: 0;
@@ -432,6 +448,10 @@
       <!-- Star 2 Graphic Asset (Rendered behind the white box) -->
       <div class="star-2">
         <img src="/images/star-2.svg" alt="Star 2 Graphic">
+      </div>
+      <!-- Hero Partial Face Graphic Asset -->
+      <div class="hero-partial-face">
+        <img src="/images/hero-partial-face.svg" alt="Hero Face Graphic">
       </div>
       <!-- Horizontally Centered Rounded Rectangle (Rendered on top of Star 2) -->
       <div class="center-rounded-rect">
