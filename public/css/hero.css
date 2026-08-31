@@ -49,8 +49,8 @@
 
 .star-left {
   position: absolute;
-  left: 0;
-  top: clamp(26vh, 35vh, 42vh);
+  left: calc(50% - 50vw);
+  top: 50%;
   transform: translate(-50%, -50%) rotate(17deg);
   transform-origin: center center;
   animation: tiltStarOnLoad 1.2s cubic-bezier(0.22, 1, 0.36, 1) forwards;
@@ -188,8 +188,8 @@
 
 .star-3 {
   position: absolute;
-  right: 0;
-  top: clamp(26vh, 34vh, 42vh);
+  right: calc(50% - 50vw);
+  top: 50%;
   transform: translate(35%, -50%);
   animation: fadeInFromAbove 1.2s cubic-bezier(0.22, 1, 0.36, 1) forwards;
   z-index: 1;
@@ -216,8 +216,8 @@
 
 .star-4 {
   position: absolute;
-  right: clamp(16px, 12vw, 140px);
-  top: clamp(34vh, 44vh, 50vh);
+  right: clamp(10px, 3cqw, 40px);
+  top: clamp(10%, 25%, 35%);
   animation: fadeInFromTopRight 1.2s cubic-bezier(0.22, 1, 0.36, 1) forwards;
   z-index: 1;
   pointer-events: none;
@@ -272,7 +272,7 @@
   }
   .group-photo-hero {
     object-fit: cover;
-    object-position: center 30%;
+    object-position: right center;
     border-radius: 10px;
   }
   /* Smaller SVGs on Tablets */
@@ -285,6 +285,9 @@
   .yellow-rect-top-fade img {
     height: clamp(20px, 5.5cqw, 42px);
     width: clamp(160px, 60cqw, 360px);
+  }
+  .star-left {
+    top: 30%;
   }
   .star-left img {
     height: clamp(70px, 16vh, 140px);
@@ -324,7 +327,7 @@
   }
   .group-photo-hero {
     object-fit: cover;
-    object-position: center 25%;
+    object-position: right center;
     border-radius: 6px;
   }
   /* Even Smaller SVGs on Phones */
@@ -337,6 +340,9 @@
   .yellow-rect-top-fade img {
     height: clamp(16px, 4.5cqw, 28px);
     width: clamp(120px, 55cqw, 220px);
+  }
+  .star-left {
+    top: 20%;
   }
   .star-left img {
     height: clamp(50px, 12vh, 90px);
