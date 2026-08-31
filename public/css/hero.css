@@ -144,7 +144,7 @@
 .hero-welco-text {
   position: absolute;
   top: 0;
-  left: clamp(85px, 28.65cqw, 275px);
+  left: clamp(100px, 29cqw, 280px);
   transform: translateY(-106%);
   font-family: 'Relationship Of Melodrame', cursive, sans-serif;
   font-size: calc(0.5rem + 7.8vw);
@@ -276,7 +276,7 @@
     border-radius: 10px;
   }
   .hero-welco-text {
-    left: clamp(45px, 18cqw, 160px);
+    left: clamp(65px, 22cqw, 180px);
   }
   /* Smaller SVGs on Tablets */
   .hero-partial-face img {
@@ -290,13 +290,13 @@
     width: clamp(160px, 60cqw, 360px);
   }
   .star-left {
-    top: 30%;
+    top: 8%;
   }
   .star-left img {
-    height: clamp(70px, 16vh, 140px);
+    height: clamp(100px, 22vh, 180px);
   }
   .star-2 img {
-    height: clamp(90px, 26cqw, 180px);
+    height: clamp(130px, 36cqw, 240px);
   }
   .star-3 img {
     height: clamp(65px, 14vh, 130px);
@@ -334,7 +334,7 @@
     border-radius: 6px;
   }
   .hero-welco-text {
-    left: clamp(24px, 12cqw, 55px);
+    left: clamp(42px, 17cqw, 75px);
   }
   /* Even Smaller SVGs on Phones */
   .hero-partial-face img {
@@ -348,13 +348,13 @@
     width: clamp(120px, 55cqw, 220px);
   }
   .star-left {
-    top: 20%;
+    top: -12%;
   }
   .star-left img {
-    height: clamp(50px, 12vh, 90px);
+    height: clamp(80px, 18vh, 135px);
   }
   .star-2 img {
-    height: clamp(65px, 20cqw, 110px);
+    height: clamp(100px, 34cqw, 180px);
   }
   .star-3 img {
     height: clamp(45px, 10vh, 80px);
