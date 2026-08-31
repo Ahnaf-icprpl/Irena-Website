@@ -280,3 +280,36 @@ body {
     padding-top: clamp(185px, 42vw, 225px);
   }
 }
+
+/* Persistent Debug Device Info Display (Sharp Black Box Flush to Corner) */
+.debug-device-info {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  background: #000000;
+  color: #ffffff;
+  border-radius: 0;
+  border: none;
+  padding: 4px 6px;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  font-size: 9.5px;
+  line-height: 1.35;
+  box-shadow: none;
+  z-index: 999999;
+  pointer-events: none;
+  user-select: none;
+  white-space: nowrap;
+}
+
+.debug-device-info .debug-row {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.debug-device-info .debug-label,
+.debug-device-info .debug-val,
+.debug-device-info .debug-category {
+  color: #ffffff;
+  font-weight: 400;
+}

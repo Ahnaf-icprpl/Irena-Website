@@ -378,3 +378,36 @@
     left: -8px;
   }
 }
+
+/* Specific Fine-Tuning for Small Mobile Screens (e.g. iPhone SE, <=380px) */
+@media (max-width: 380px) {
+  .card-wrapper {
+    width: 70%;
+  }
+  .center-rounded-rect {
+    height: clamp(170px, 66cqw, 240px);
+    padding: 4px;
+    border-radius: 8px;
+  }
+  .hero-welco-text {
+    left: clamp(28px, 12cqw, 55px);
+  }
+  .star-left img {
+    height: clamp(65px, 16vh, 110px);
+  }
+  .star-2 img {
+    height: clamp(80px, 30cqw, 140px);
+  }
+  .corner-framing-top-right img,
+  .corner-framing-bottom-left img {
+    height: clamp(100px, 40cqw, 160px);
+  }
+  .corner-framing-top-right {
+    top: -38px;
+    right: calc(50% - 50vw + 8px);
+  }
+  .corner-framing-bottom-left {
+    bottom: -12px;
+    left: -6px;
+  }
+}

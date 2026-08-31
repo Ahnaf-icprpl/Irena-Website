@@ -215,5 +215,73 @@
       }
     })();
   </script>
+
+  <!-- Persistent Debug Device Info (Sharp Black Rectangle at Bottom Left) -->
+  <div id="debug-device-info" class="debug-device-info">
+    <div class="debug-row">
+      <span class="debug-label">Device:</span>
+      <span id="dbg-device" class="debug-category">Detecting...</span>
+    </div>
+    <div class="debug-row">
+      <span class="debug-label">Viewport:</span>
+      <span id="dbg-viewport" class="debug-val">-</span>
+    </div>
+    <div class="debug-row">
+      <span class="debug-label">Screen:</span>
+      <span id="dbg-screen" class="debug-val">-</span>
+    </div>
+    <div class="debug-row">
+      <span class="debug-label">DPI / DPR:</span>
+      <span id="dbg-dpi" class="debug-val">-</span>
+    </div>
+  </div>
+
+  <script>
+    // Real-Time Device Debug Display Controller
+    (function () {
+      function updateDebugInfo() {
+        const w = window.innerWidth;
+        const h = window.innerHeight;
+        const sw = window.screen ? window.screen.width : w;
+        const sh = window.screen ? window.screen.height : h;
+        const dpr = (window.devicePixelRatio || 1).toFixed(2);
+        const approxDpi = Math.round((window.devicePixelRatio || 1) * 96);
+
+        let category = 'Desktop';
+        if (w <= 380) {
+          category = 'Small Mobile (≤380px)';
+        } else if (w <= 480) {
+          category = 'Mobile (381px–480px)';
+        } else if (w <= 640) {
+          category = 'Large Mobile (481px–640px)';
+        } else if (w <= 768) {
+          category = 'Tablet Portrait (641px–768px)';
+        } else if (w <= 1024) {
+          category = 'Tablet Landscape (769px–1024px)';
+        } else if (w <= 1440) {
+          category = 'Laptop / Desktop (1025px–1440px)';
+        } else if (w <= 1920) {
+          category = 'Large Desktop (1441px–1920px)';
+        } else {
+          category = 'Ultra-Wide / 4K (>1920px)';
+        }
+
+        const dbgDevice = document.getElementById('dbg-device');
+        const dbgViewport = document.getElementById('dbg-viewport');
+        const dbgScreen = document.getElementById('dbg-screen');
+        const dbgDpi = document.getElementById('dbg-dpi');
+
+        if (dbgDevice) dbgDevice.textContent = category;
+        if (dbgViewport) dbgViewport.textContent = `${w} × ${h} px`;
+        if (dbgScreen) dbgScreen.textContent = `${sw} × ${sh} px`;
+        if (dbgDpi) dbgDpi.textContent = `${dpr}x (~${approxDpi} DPI)`;
+      }
+
+      window.addEventListener('resize', updateDebugInfo);
+      window.addEventListener('orientationchange', updateDebugInfo);
+      document.addEventListener('DOMContentLoaded', updateDebugInfo);
+      updateDebugInfo();
+    })();
+  </script>
 </body>
 </html>
