@@ -116,6 +116,7 @@ body {
   flex-direction: column;
   align-items: center;
   padding-top: clamp(160px, 22vw, 290px);
+  z-index: 2;
 }
 
 @media (max-width: 640px) {

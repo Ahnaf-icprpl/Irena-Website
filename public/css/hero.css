@@ -60,7 +60,7 @@
 .star-left img {
   display: block;
   width: auto;
-  height: clamp(240px, 65vh, 750px);
+  height: clamp(180px, 45vh, 460px);
 }
 
 /* Star 2 Graphic (Layered behind the white box) */
@@ -188,7 +188,7 @@
 .star-3 {
   position: absolute;
   right: 0;
-  top: 34vh;
+  top: clamp(26vh, 34vh, 42vh);
   transform: translate(35%, -50%);
   animation: fadeInFromAbove 1.2s cubic-bezier(0.22, 1, 0.36, 1) forwards;
   z-index: 1;
@@ -215,8 +215,8 @@
 
 .star-4 {
   position: absolute;
-  right: 12vw;
-  top: 44vh;
+  right: clamp(16px, 12vw, 140px);
+  top: clamp(34vh, 44vh, 50vh);
   animation: fadeInFromTopRight 1.2s cubic-bezier(0.22, 1, 0.36, 1) forwards;
   z-index: 1;
   pointer-events: none;
