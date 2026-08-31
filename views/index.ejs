@@ -249,6 +249,24 @@
       max-height: 56px;
     }
 
+    /* Yellow Rect Top Fade Accent (Positioned above the rectangle, 20% tucked behind) */
+    .yellow-rect-top-fade {
+      position: absolute;
+      top: 0;
+      left: 260px;
+      transform: translateY(-80%);
+      pointer-events: none;
+      z-index: 1;
+    }
+
+    .yellow-rect-top-fade img {
+      display: block;
+      width: auto;
+      max-width: 722px;
+      height: auto;
+      max-height: 85px;
+    }
+
     @keyframes fadeInFromAbove {
       from {
         opacity: 0;
@@ -468,6 +486,10 @@
       <!-- Hero Partial Face Graphic Asset -->
       <div class="hero-partial-face">
         <img src="/images/hero-partial-face.svg" alt="Hero Face Graphic">
+      </div>
+      <!-- Yellow Rect Top Fade Accent Graphic -->
+      <div class="yellow-rect-top-fade">
+        <img src="/images/yellow-rect-top-fade.svg" alt="Yellow Rect Top Fade">
       </div>
       <!-- Horizontally Centered Rounded Rectangle (Rendered on top of Star 2) -->
       <div class="center-rounded-rect">
