@@ -6,6 +6,16 @@
   <title><%= title || 'Irena Website' %></title>
   <!-- Coolvetica Web Font -->
   <link href="https://fonts.cdnfonts.com/css/coolvetica-2" rel="stylesheet">
+  <script>
+    // Prevent browser auto-scroll restoration on refresh
+    if ('scrollRestoration' in history) {
+      history.scrollRestoration = 'manual';
+    }
+    window.scrollTo(0, 0);
+    window.addEventListener('pageshow', () => {
+      window.scrollTo(0, 0);
+    });
+  </script>
   <style>
     * {
       box-sizing: border-box;
@@ -13,14 +23,20 @@
       padding: 0;
     }
 
+    html {
+      scroll-behavior: smooth;
+    }
+
     body {
       background-color: #ffffff;
       background-image: url('/images/star-tile.png');
       background-repeat: repeat;
-      /* Fixed mini star tile */
-      background-size: 65px 70px;
+      /* Fixed micro star tile */
+      background-size: 37px 41px;
       background-position: top left;
-      min-height: 100vh;
+      min-height: 200vh;
+      position: relative;
+      overflow-x: hidden;
     }
 
     .navbar {
@@ -103,6 +119,40 @@
     .nav-item:hover {
       opacity: 0.82;
     }
+
+    /* Left Star Graphic with 50% offset so it is half visible */
+    @keyframes tiltStarOnLoad {
+      from {
+        transform: translate(-50%, -50%) rotate(0deg);
+      }
+      to {
+        transform: translate(-50%, -50%) rotate(38deg);
+      }
+    }
+
+    .star-left {
+      position: absolute;
+      left: 0;
+      top: 35vh;
+      transform: translate(-50%, -50%) rotate(38deg);
+      transform-origin: center center;
+      animation: tiltStarOnLoad 1.2s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+      z-index: 10;
+      pointer-events: none;
+    }
+
+    .star-left img {
+      display: block;
+      height: auto;
+      max-height: 75vh;
+    }
+
+    /* Content Area */
+    .content-area {
+      min-height: 200vh;
+      width: 100%;
+      position: relative;
+    }
   </style>
 </head>
 <body>
@@ -121,5 +171,13 @@
       <li><a href="#kontak" class="nav-item">Kontak</a></li>
     </ul>
   </nav>
+
+  <!-- Left Star Asset -->
+  <div class="star-left">
+    <img src="/images/star-1.svg" alt="Star Graphic">
+  </div>
+
+  <!-- Scrollable Content Area -->
+  <main class="content-area"></main>
 </body>
 </html>
