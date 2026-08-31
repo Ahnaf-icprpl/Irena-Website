@@ -182,7 +182,7 @@
       background: rgba(15, 23, 42, 0.45);
       backdrop-filter: blur(8px);
       -webkit-backdrop-filter: blur(8px);
-      display: flex;
+      display: none;
       align-items: center;
       justify-content: center;
       z-index: 10000;
@@ -321,7 +321,7 @@
     <div class="center-rounded-rect"></div>
   </main>
 
-  <!-- Development Environment Notice Modal (Sharp Corners, 5s Countdown Auto-Dismiss) -->
+  <!-- Development Environment Notice Modal (Sharp Corners, 5s Countdown Auto-Dismiss, 1-Hour Cookie Persistence) -->
   <% if (typeof env !== 'undefined' && env === 'development') { %>
     <div id="dev-modal-overlay" class="dev-modal-overlay">
       <div class="dev-modal-card" role="dialog" aria-modal="true" aria-labelledby="dev-modal-title">
@@ -340,7 +340,17 @@
     <script>
       let devModalInterval = null;
 
+      function setDevModalCookie() {
+        // Persist for 1 hour (3600 seconds)
+        document.cookie = "dev_modal_seen=1; max-age=3600; path=/; SameSite=Lax";
+      }
+
+      function hasDevModalCookie() {
+        return document.cookie.split(';').some((item) => item.trim().startsWith('dev_modal_seen='));
+      }
+
       function dismissDevModal() {
+        setDevModalCookie();
         if (devModalInterval) {
           clearInterval(devModalInterval);
           devModalInterval = null;
@@ -354,8 +364,20 @@
         }
       }
 
-      // 5-second countdown timer on the OK button
-      (function startDevCountdown() {
+      // Check 1-hour persistence cookie
+      (function initDevModal() {
+        if (hasDevModalCookie()) {
+          const overlay = document.getElementById('dev-modal-overlay');
+          if (overlay) overlay.remove();
+          return;
+        }
+
+        const overlay = document.getElementById('dev-modal-overlay');
+        if (overlay) {
+          overlay.style.display = 'flex';
+          setDevModalCookie();
+        }
+
         let secondsLeft = 5;
         const btn = document.getElementById('dev-modal-btn');
         if (btn) {
