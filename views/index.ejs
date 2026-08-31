@@ -17,11 +17,11 @@
     });
   </script>
   <!-- External Modular Stylesheets -->
-  <link rel="stylesheet" href="/css/fonts.css">
-  <link rel="stylesheet" href="/css/layout.css">
-  <link rel="stylesheet" href="/css/hero.css">
+  <link rel="stylesheet" href="/css/fonts.css?v=<%= Date.now() %>">
+  <link rel="stylesheet" href="/css/layout.css?v=<%= Date.now() %>">
+  <link rel="stylesheet" href="/css/hero.css?v=<%= Date.now() %>">
   <% if (typeof env !== 'undefined' && env === 'development') { %>
-    <link rel="stylesheet" href="/css/modal.css">
+    <link rel="stylesheet" href="/css/modal.css?v=<%= Date.now() %>">
   <% } %>
 </head>
 <body>

@@ -309,8 +309,8 @@
     height: clamp(160px, 48cqw, 340px);
   }
   .corner-framing-top-right {
-    top: clamp(-100px, -14cqw, -55px);
-    right: clamp(-28px, -3.8cqw, -14px);
+    top: clamp(-75px, -11cqw, -35px);
+    right: calc(50% - 50vw + 16px);
   }
   .corner-framing-bottom-left {
     bottom: clamp(-35px, -5cqw, -18px);
@@ -370,8 +370,8 @@
     height: clamp(120px, 44cqw, 200px);
   }
   .corner-framing-top-right {
-    top: -52px;
-    right: -12px;
+    top: -45px;
+    right: calc(50% - 50vw + 12px);
   }
   .corner-framing-bottom-left {
     bottom: -15px;
