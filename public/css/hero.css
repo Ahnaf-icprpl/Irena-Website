@@ -147,7 +147,7 @@
   left: clamp(100px, 29cqw, 280px);
   transform: translateY(-106%);
   font-family: 'Relationship Of Melodrame', cursive, sans-serif;
-  font-size: calc(0.5rem + 7.8vw);
+  font-size: clamp(2.2rem, 0.6rem + 5.8vw, 6.2rem);
   font-weight: 400;
   color: #848EB2;
   z-index: 2;
