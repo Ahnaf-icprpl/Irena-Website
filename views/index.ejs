@@ -6,91 +6,23 @@
   <title><%= title || 'Irena Website' %></title>
   <!-- Coolvetica Web Font -->
   <link href="https://fonts.cdnfonts.com/css/coolvetica-2" rel="stylesheet">
-  <style>
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
+  <script>
+    // Prevent browser auto-scroll restoration on refresh
+    if ('scrollRestoration' in history) {
+      history.scrollRestoration = 'manual';
     }
-
-    body {
-      background-color: #ffffff;
-      min-height: 100vh;
-    }
-
-    .navbar {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 190px;
-      /* Extended solid blue area at top with smooth fade below */
-      background: linear-gradient(
-        to bottom,
-        rgba(150, 215, 255, 1) 0%,
-        rgba(150, 215, 255, 1) 42%,
-        rgba(150, 215, 255, 0.94) 55%,
-        rgba(150, 215, 255, 0.80) 67%,
-        rgba(150, 215, 255, 0.58) 78%,
-        rgba(150, 215, 255, 0.32) 88%,
-        rgba(150, 215, 255, 0.10) 95%,
-        rgba(150, 215, 255, 0) 100%
-      );
-      z-index: 1000;
-      padding: 24px 48px 0 36px;
-      display: flex;
-      justify-content: space-between;
-      align-items: flex-start;
-      pointer-events: none;
-    }
-
-    .nav-brand {
-      display: flex;
-      align-items: center;
-      gap: 18px;
-      text-decoration: none;
-      pointer-events: auto;
-    }
-
-    .corner-logo {
-      height: 75px;
-      width: auto;
-      object-fit: contain;
-      display: block;
-    }
-
-    .nav-title {
-      font-family: 'Coolvetica', 'Coolvetica Rg', 'Coolvetica Regular', sans-serif;
-      font-size: 34px;
-      font-weight: 400;
-      color: #ffffff;
-      line-height: 1;
-    }
-
-    .nav-menu {
-      display: flex;
-      align-items: center;
-      list-style: none;
-      gap: 32px;
-      margin-left: auto;
-      padding-top: 22px;
-      pointer-events: auto;
-    }
-
-    .nav-item {
-      font-family: 'Coolvetica', 'Coolvetica Rg', 'Coolvetica Regular', sans-serif;
-      font-size: 26px;
-      font-weight: 400;
-      color: #ffffff;
-      text-decoration: none;
-      line-height: 1;
-      transition: opacity 0.2s ease;
-    }
-
-    .nav-item:hover {
-      opacity: 0.82;
-    }
-  </style>
+    window.scrollTo(0, 0);
+    window.addEventListener('pageshow', () => {
+      window.scrollTo(0, 0);
+    });
+  </script>
+  <!-- External Modular Stylesheets -->
+  <link rel="stylesheet" href="/css/fonts.css">
+  <link rel="stylesheet" href="/css/layout.css">
+  <link rel="stylesheet" href="/css/hero.css">
+  <% if (typeof env !== 'undefined' && env === 'development') { %>
+    <link rel="stylesheet" href="/css/modal.css">
+  <% } %>
 </head>
 <body>
   <nav class="navbar">
@@ -108,5 +40,133 @@
       <li><a href="#kontak" class="nav-item">Kontak</a></li>
     </ul>
   </nav>
+
+  <!-- Left Star Asset -->
+  <div class="star-left">
+    <img src="/images/star-1.svg" alt="Star Graphic">
+  </div>
+
+  <!-- Right Star Asset (Star 3) -->
+  <div class="star-3">
+    <img src="/images/star-3.svg" alt="Star 3 Graphic">
+  </div>
+
+  <!-- Star 4 Accent Graphic -->
+  <div class="star-4">
+    <img src="/images/star-4.svg" alt="Star 4 Graphic">
+  </div>
+
+  <!-- Scrollable Content Area -->
+  <main class="content-area">
+    <div class="card-wrapper">
+      <!-- Star 2 Graphic Asset (Rendered behind the white box) -->
+      <div class="star-2">
+        <img src="/images/star-2.svg" alt="Star 2 Graphic">
+      </div>
+      <!-- Yellow Rect Top Fade Accent Graphic (Rendered behind the face) -->
+      <div class="yellow-rect-top-fade">
+        <img src="/images/yellow-rect-top-fade.svg" alt="Yellow Rect Top Fade">
+      </div>
+      <!-- Hero Partial Face Graphic Asset -->
+      <div class="hero-partial-face">
+        <img src="/images/hero-partial-face.svg" alt="Hero Face Graphic">
+      </div>
+      <!-- Welco Typography Accent -->
+      <div class="hero-welco-text"><span class="welco-w">W</span>elco<span class="welco-suffix">me to ..</span></div>
+      <!-- Horizontally Centered Rounded Rectangle (Rendered on top of Star 2) -->
+      <div class="center-rounded-rect">
+        <img src="/images/group-photo-hero.jpg" alt="Group Photo" class="group-photo-hero">
+      </div>
+      <!-- Hero Hand Holding Graphic Asset (Rendered on top of the card edge) -->
+      <div class="hero-hand-holding">
+        <img src="/images/hero-hand-holding.svg" alt="Hero Hands Graphic">
+      </div>
+      <!-- Up Right Corner Framing Graphic -->
+      <div class="corner-framing-top-right">
+        <img src="/images/corner-framing-top-right.svg" alt="Top Right Corner Framing">
+      </div>
+      <!-- Down Left Corner Framing Graphic -->
+      <div class="corner-framing-bottom-left">
+        <img src="/images/corner-framing-bottom-left.svg" alt="Bottom Left Corner Framing">
+      </div>
+    </div>
+  </main>
+
+  <!-- Development Environment Notice Modal (Sharp Corners, 5s Countdown Auto-Dismiss, 1-Hour Cookie Persistence) -->
+  <% if (typeof env !== 'undefined' && env === 'development') { %>
+    <div id="dev-modal-overlay" class="dev-modal-overlay">
+      <div class="dev-modal-card" role="dialog" aria-modal="true" aria-labelledby="dev-modal-title">
+        <div class="dev-modal-badge">
+          <span class="dev-modal-indicator"></span>
+          <span>Development Environment</span>
+        </div>
+        <h2 id="dev-modal-title" class="dev-modal-title">Notice</h2>
+        <p class="dev-modal-text">
+          You are accessing a <strong>development version</strong> of this website. Things are actively being built, and features might break or change without notice.
+        </p>
+        <button id="dev-modal-btn" class="dev-modal-btn" onclick="dismissDevModal()">OK (5)</button>
+      </div>
+    </div>
+
+    <script>
+      let devModalInterval = null;
+
+      function setDevModalCookie() {
+        // Persist for 1 hour (3600 seconds)
+        document.cookie = "dev_modal_seen=1; max-age=3600; path=/; SameSite=Lax";
+      }
+
+      function hasDevModalCookie() {
+        return document.cookie.split(';').some((item) => item.trim().startsWith('dev_modal_seen='));
+      }
+
+      function dismissDevModal() {
+        setDevModalCookie();
+        if (devModalInterval) {
+          clearInterval(devModalInterval);
+          devModalInterval = null;
+        }
+        const overlay = document.getElementById('dev-modal-overlay');
+        if (overlay) {
+          overlay.classList.add('dismissed');
+          setTimeout(() => {
+            overlay.remove();
+          }, 350);
+        }
+      }
+
+      // Check 1-hour persistence cookie
+      (function initDevModal() {
+        if (hasDevModalCookie()) {
+          const overlay = document.getElementById('dev-modal-overlay');
+          if (overlay) overlay.remove();
+          return;
+        }
+
+        const overlay = document.getElementById('dev-modal-overlay');
+        if (overlay) {
+          overlay.style.display = 'flex';
+          setDevModalCookie();
+        }
+
+        let secondsLeft = 5;
+        const btn = document.getElementById('dev-modal-btn');
+        if (btn) {
+          btn.textContent = `OK (${secondsLeft})`;
+        }
+
+        devModalInterval = setInterval(() => {
+          secondsLeft -= 1;
+          if (secondsLeft > 0) {
+            if (btn) btn.textContent = `OK (${secondsLeft})`;
+          } else {
+            clearInterval(devModalInterval);
+            devModalInterval = null;
+            dismissDevModal();
+          }
+        }, 1000);
+      })();
+    </script>
+  <% } %>
 </body>
 </html>
