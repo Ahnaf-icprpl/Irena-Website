@@ -18,6 +18,17 @@
   </script>
   <style>
     @font-face {
+      font-family: 'Awesome Serif';
+      src: url('/fonts/awesome-serif-medium.woff2') format('woff2'),
+           url('/fonts/awesome-serif-regular.woff2') format('woff2'),
+           url('/fonts/awesome-serif-medium.otf') format('opentype'),
+           url('/fonts/awesome-serif-regular.otf') format('opentype');
+      font-weight: normal;
+      font-style: normal;
+      font-display: swap;
+    }
+
+    @font-face {
       font-family: 'Aston Script';
       src: url('/fonts/aston-script.woff2') format('woff2'),
            url('/fonts/aston-script.ttf') format('truetype');
@@ -317,6 +328,14 @@
       margin-right: -4px;
     }
 
+    .hero-welco-text .welco-suffix {
+      font-family: 'Awesome Serif', serif;
+      font-size: 0.62em;
+      margin-left: 6px;
+      letter-spacing: 0.01em;
+      vertical-align: baseline;
+    }
+
     @keyframes fadeInFromAbove {
       from {
         opacity: 0;
@@ -542,7 +561,7 @@
         <img src="/images/hero-partial-face.svg" alt="Hero Face Graphic">
       </div>
       <!-- Welco Typography Accent -->
-      <div class="hero-welco-text"><span class="welco-w">W</span>elco</div>
+      <div class="hero-welco-text"><span class="welco-w">W</span>elco<span class="welco-suffix"> me to ..</span></div>
       <!-- Horizontally Centered Rounded Rectangle (Rendered on top of Star 2) -->
       <div class="center-rounded-rect">
         <img src="/images/group-photo-hero.jpg" alt="Group Photo" class="group-photo-hero">
