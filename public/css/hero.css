@@ -147,7 +147,7 @@
   left: clamp(85px, 28.65cqw, 275px);
   transform: translateY(-106%);
   font-family: 'Relationship Of Melodrame', cursive, sans-serif;
-  font-size: clamp(32px, 10.42cqw, 100px);
+  font-size: clamp(44px, 13.5cqw, 130px);
   font-weight: 400;
   color: #848EB2;
   z-index: 2;
@@ -275,6 +275,9 @@
     object-position: right center;
     border-radius: 10px;
   }
+  .hero-welco-text {
+    left: clamp(45px, 18cqw, 160px);
+  }
   /* Smaller SVGs on Tablets */
   .hero-partial-face img {
     height: clamp(70px, 20cqw, 140px);
@@ -329,6 +332,9 @@
     object-fit: cover;
     object-position: right center;
     border-radius: 6px;
+  }
+  .hero-welco-text {
+    left: clamp(24px, 12cqw, 55px);
   }
   /* Even Smaller SVGs on Phones */
   .hero-partial-face img {

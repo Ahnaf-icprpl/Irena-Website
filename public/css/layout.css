@@ -235,7 +235,7 @@ body {
   }
 
   .content-area {
-    padding-top: 145px;
+    padding-top: clamp(195px, 26vw, 235px);
   }
 }
 
@@ -277,6 +277,6 @@ body {
   }
 
   .content-area {
-    padding-top: 115px;
+    padding-top: clamp(185px, 42vw, 225px);
   }
 }
