@@ -233,11 +233,23 @@
       max-height: 50vh;
     }
 
+    @keyframes fadeInFromTopRight {
+      from {
+        opacity: 0;
+        transform: translate(25px, -25px);
+      }
+      to {
+        opacity: 1;
+        transform: translate(0, 0);
+      }
+    }
+
     /* Star 4 Graphic Asset */
     .star-4 {
       position: absolute;
       right: 12vw;
-      top: 51vh;
+      top: 44vh;
+      animation: fadeInFromTopRight 1.2s cubic-bezier(0.22, 1, 0.36, 1) forwards;
       z-index: 10;
       pointer-events: none;
     }
