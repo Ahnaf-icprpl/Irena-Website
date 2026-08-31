@@ -147,7 +147,7 @@
   left: clamp(85px, 28.65cqw, 275px);
   transform: translateY(-106%);
   font-family: 'Relationship Of Melodrame', cursive, sans-serif;
-  font-size: clamp(44px, 13.5cqw, 130px);
+  font-size: calc(0.5rem + 7.8vw);
   font-weight: 400;
   color: #848EB2;
   z-index: 2;
@@ -232,8 +232,8 @@
 /* Up Right Corner Framing Graphic */
 .corner-framing-top-right {
   position: absolute;
-  top: clamp(-122px, -12.71cqw, -40px);
-  right: clamp(-50px, -5.21cqw, -16px);
+  top: clamp(-230px, -23cqw, -85px);
+  right: clamp(-68px, -6.8cqw, -24px);
   z-index: 10;
   pointer-events: none;
 }
@@ -309,8 +309,8 @@
     height: clamp(160px, 48cqw, 340px);
   }
   .corner-framing-top-right {
-    top: clamp(-45px, -6.5cqw, -25px);
-    right: clamp(-20px, -2.8cqw, -10px);
+    top: clamp(-100px, -14cqw, -55px);
+    right: clamp(-28px, -3.8cqw, -14px);
   }
   .corner-framing-bottom-left {
     bottom: clamp(-35px, -5cqw, -18px);
@@ -370,8 +370,8 @@
     height: clamp(120px, 44cqw, 200px);
   }
   .corner-framing-top-right {
-    top: -20px;
-    right: -8px;
+    top: -52px;
+    right: -12px;
   }
   .corner-framing-bottom-left {
     bottom: -15px;
