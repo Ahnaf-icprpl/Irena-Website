@@ -321,7 +321,7 @@
     <div class="center-rounded-rect"></div>
   </main>
 
-  <!-- Development Environment Notice Modal (Included ONLY when env === 'development') -->
+  <!-- Development Environment Notice Modal (Sharp Corners, 5s Countdown Auto-Dismiss) -->
   <% if (typeof env !== 'undefined' && env === 'development') { %>
     <div id="dev-modal-overlay" class="dev-modal-overlay">
       <div class="dev-modal-card" role="dialog" aria-modal="true" aria-labelledby="dev-modal-title">
@@ -333,7 +333,7 @@
         <p class="dev-modal-text">
           You are accessing a <strong>development version</strong> of this website. Things are actively being built, and features might break or change without notice.
         </p>
-        <button id="dev-modal-btn" class="dev-modal-btn" onclick="dismissDevModal()">OK (3)</button>
+        <button id="dev-modal-btn" class="dev-modal-btn" onclick="dismissDevModal()">OK (5)</button>
       </div>
     </div>
 
@@ -354,9 +354,9 @@
         }
       }
 
-      // 3-second countdown timer on the OK button
+      // 5-second countdown timer on the OK button
       (function startDevCountdown() {
-        let secondsLeft = 3;
+        let secondsLeft = 5;
         const btn = document.getElementById('dev-modal-btn');
         if (btn) {
           btn.textContent = `OK (${secondsLeft})`;
