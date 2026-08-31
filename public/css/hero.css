@@ -16,13 +16,13 @@
 /* Centered Rounded Rectangle */
 .center-rounded-rect {
   width: 100%;
-  height: clamp(260px, 60.42cqw, 580px);
+  height: clamp(240px, 60.42cqw, 580px);
   background-color: #ffffff;
   border-radius: clamp(14px, 2.92cqw, 28px);
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.15), 0 0 6px rgba(0, 0, 0, 0.08);
   position: relative;
   z-index: 3;
-  padding: clamp(12px, 2.5cqw, 24px);
+  padding: clamp(10px, 2.5cqw, 24px);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -49,7 +49,7 @@
 .star-left {
   position: absolute;
   left: 0;
-  top: clamp(28vh, 35vh, 42vh);
+  top: clamp(26vh, 35vh, 42vh);
   transform: translate(-50%, -50%) rotate(17deg);
   transform-origin: center center;
   animation: tiltStarOnLoad 1.2s cubic-bezier(0.22, 1, 0.36, 1) forwards;
@@ -87,7 +87,7 @@
 .star-2 img {
   display: block;
   width: auto;
-  height: clamp(180px, 43.75cqw, 420px);
+  height: clamp(140px, 43.75cqw, 420px);
 }
 
 /* Hero Partial Face Graphic */
@@ -103,13 +103,13 @@
 .hero-partial-face img {
   display: block;
   width: auto;
-  height: clamp(115px, 28.65cqw, 275px);
+  height: clamp(95px, 28.65cqw, 275px);
 }
 
 /* Hero Hand Holding Graphic (Fingers gripping top edge of card) */
 .hero-hand-holding {
   position: absolute;
-  left: clamp(27px, 7.08cqw, 68px);
+  left: clamp(26px, 7.08cqw, 68px);
   top: 0;
   transform: translateY(-39%);
   z-index: 10;
@@ -119,14 +119,14 @@
 .hero-hand-holding img {
   display: block;
   width: auto;
-  height: clamp(23px, 5.83cqw, 56px);
+  height: clamp(20px, 5.83cqw, 56px);
 }
 
 /* Yellow Rect Top Fade Accent */
 .yellow-rect-top-fade {
   position: absolute;
   top: 0;
-  left: clamp(100px, 27.08cqw, 260px);
+  left: clamp(80px, 27.08cqw, 260px);
   transform: translateY(-68%);
   pointer-events: none;
   z-index: 1;
@@ -134,8 +134,8 @@
 
 .yellow-rect-top-fade img {
   display: block;
-  width: clamp(280px, 75.2cqw, 722px);
-  height: clamp(35px, 8.85cqw, 85px);
+  width: clamp(200px, 75.2cqw, 722px);
+  height: clamp(28px, 8.85cqw, 85px);
   object-fit: fill;
 }
 
@@ -143,10 +143,10 @@
 .hero-welco-text {
   position: absolute;
   top: 0;
-  left: clamp(105px, 28.65cqw, 275px);
+  left: clamp(85px, 28.65cqw, 275px);
   transform: translateY(-106%);
   font-family: 'Relationship Of Melodrame', cursive, sans-serif;
-  font-size: clamp(38px, 10.42cqw, 100px);
+  font-size: clamp(32px, 10.42cqw, 100px);
   font-weight: 400;
   color: #848EB2;
   z-index: 2;
@@ -198,7 +198,7 @@
 .star-3 img {
   display: block;
   width: auto;
-  height: clamp(160px, 45vh, 500px);
+  height: clamp(130px, 45vh, 500px);
 }
 
 /* Star 4 Graphic Asset */
@@ -225,14 +225,14 @@
 .star-4 img {
   display: block;
   width: auto;
-  height: clamp(40px, 12.5cqw, 120px);
+  height: clamp(32px, 12.5cqw, 120px);
 }
 
 /* Up Right Corner Framing Graphic */
 .corner-framing-top-right {
   position: absolute;
-  top: clamp(-122px, -12.71cqw, -50px);
-  right: clamp(-50px, -5.21cqw, -20px);
+  top: clamp(-122px, -12.71cqw, -40px);
+  right: clamp(-50px, -5.21cqw, -16px);
   z-index: 10;
   pointer-events: none;
 }
@@ -240,14 +240,14 @@
 .corner-framing-top-right img {
   display: block;
   width: auto;
-  height: clamp(260px, 64.17cqw, 616px);
+  height: clamp(220px, 64.17cqw, 616px);
 }
 
 /* Down Left Corner Framing Graphic */
 .corner-framing-bottom-left {
   position: absolute;
-  bottom: clamp(-85px, -8.85cqw, -35px);
-  left: clamp(-60px, -6.25cqw, -24px);
+  bottom: clamp(-85px, -8.85cqw, -28px);
+  left: clamp(-60px, -6.25cqw, -20px);
   z-index: 10;
   pointer-events: none;
 }
@@ -255,5 +255,65 @@
 .corner-framing-bottom-left img {
   display: block;
   width: auto;
-  height: clamp(260px, 64.17cqw, 616px);
+  height: clamp(220px, 64.17cqw, 616px);
+}
+
+/* Explicit Scaled-Down Adjustments for Mobile & Small Tablets */
+@media (max-width: 768px) {
+  .card-wrapper {
+    width: 90%;
+  }
+  .center-rounded-rect {
+    height: clamp(220px, 55cqw, 440px);
+    padding: 14px;
+    border-radius: 18px;
+  }
+  .star-left img {
+    height: clamp(100px, 24vh, 220px);
+  }
+  .star-3 img {
+    height: clamp(90px, 20vh, 200px);
+  }
+  .star-4 img {
+    height: clamp(24px, 6vw, 55px);
+  }
+  .corner-framing-top-right {
+    top: clamp(-65px, -9cqw, -35px);
+    right: clamp(-28px, -3.8cqw, -14px);
+  }
+  .corner-framing-bottom-left {
+    bottom: clamp(-45px, -6cqw, -22px);
+    left: clamp(-30px, -4cqw, -14px);
+  }
+}
+
+@media (max-width: 480px) {
+  .card-wrapper {
+    width: 92%;
+  }
+  .center-rounded-rect {
+    height: clamp(180px, 52cqw, 270px);
+    padding: 10px;
+    border-radius: 14px;
+  }
+  .star-left img {
+    height: clamp(80px, 18vh, 160px);
+  }
+  .star-3 img {
+    height: clamp(75px, 16vh, 140px);
+  }
+  .star-4 {
+    right: 8px;
+  }
+  .star-4 img {
+    height: 32px;
+  }
+  .corner-framing-top-right {
+    top: -28px;
+    right: -10px;
+  }
+  .corner-framing-bottom-left {
+    bottom: -20px;
+    left: -10px;
+  }
 }

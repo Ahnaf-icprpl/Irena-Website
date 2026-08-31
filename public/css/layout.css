@@ -1,5 +1,5 @@
 /* ==========================================================================
-   Layout, Reset & Navigation (Fully Responsive)
+   Layout, Reset & Navigation (Fully Responsive & Compact Margins)
    ========================================================================== */
 
 * {
@@ -119,11 +119,32 @@ body {
   z-index: 2;
 }
 
-@media (max-width: 640px) {
+/* Tablet & Below Margin Reductions */
+@media (max-width: 768px) {
   .navbar {
-    padding: 14px 18px 0 16px;
+    height: 130px;
+    padding: 14px 28px 0 20px;
   }
   .nav-menu {
-    gap: 12px;
+    gap: 16px;
+    padding-top: 14px;
+  }
+  .content-area {
+    padding-top: 145px;
+  }
+}
+
+/* Mobile Small Devices */
+@media (max-width: 480px) {
+  .navbar {
+    height: 105px;
+    padding: 10px 16px 0 14px;
+  }
+  .nav-menu {
+    gap: 10px;
+    padding-top: 10px;
+  }
+  .content-area {
+    padding-top: 115px;
   }
 }
