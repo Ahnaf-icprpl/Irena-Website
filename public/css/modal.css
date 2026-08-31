@@ -1,5 +1,5 @@
 /* ==========================================================================
-   Development Environment Notice Modal
+   Development Environment Notice Modal (Fully Responsive)
    ========================================================================== */
 
 .dev-modal-overlay {
@@ -15,7 +15,7 @@
   align-items: center;
   justify-content: center;
   z-index: 10000;
-  padding: 24px;
+  padding: clamp(16px, 4vw, 24px);
   transition: opacity 0.35s ease, visibility 0.35s ease;
 }
 
@@ -29,15 +29,15 @@
   background: #ffffff;
   border-radius: 0;
   border: none;
-  padding: 44px 38px 36px 38px;
-  max-width: 540px;
+  padding: clamp(28px, 5vw, 44px) clamp(20px, 4vw, 38px) clamp(24px, 4vw, 36px) clamp(20px, 4vw, 38px);
+  max-width: min(92vw, 540px);
   width: 100%;
   box-shadow: 0 25px 60px -12px rgba(0, 0, 0, 0.28);
   text-align: center;
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 16px;
+  gap: clamp(12px, 2vw, 16px);
   animation: modalPopIn 0.35s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
 
@@ -48,7 +48,7 @@
   background: #fef3c7;
   color: #92400e;
   font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-  font-size: 12px;
+  font-size: clamp(10.5px, 1.3vw, 12px);
   font-weight: 700;
   letter-spacing: 0.08em;
   text-transform: uppercase;
@@ -67,7 +67,7 @@
 
 .dev-modal-title {
   font-family: 'Coolvetica', 'Coolvetica Rg', 'Coolvetica Regular', sans-serif;
-  font-size: 32px;
+  font-size: clamp(24px, 4vw, 32px);
   font-weight: 400;
   color: #0f172a;
   line-height: 1.15;
@@ -76,7 +76,7 @@
 
 .dev-modal-text {
   font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-  font-size: 15.5px;
+  font-size: clamp(14px, 1.8vw, 15.5px);
   line-height: 1.6;
   color: #475569;
   margin-bottom: 8px;
@@ -89,10 +89,10 @@
   border: none;
   border-radius: 0;
   font-family: 'Coolvetica', 'Coolvetica Rg', 'Coolvetica Regular', sans-serif;
-  font-size: 22px;
+  font-size: clamp(18px, 2.4vw, 22px);
   font-weight: 400;
   letter-spacing: 0.02em;
-  padding: 12px 48px;
+  padding: 12px clamp(32px, 6vw, 48px);
   cursor: pointer;
   min-width: 140px;
   box-shadow: 0 6px 20px rgba(150, 215, 255, 0.45);
