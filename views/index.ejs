@@ -33,13 +33,23 @@
       <span class="nav-title">X ICP RPL 35’</span>
     </div>
 
-    <ul class="nav-menu">
+    <!-- Mobile Hamburger Toggle Button -->
+    <button class="nav-hamburger" id="nav-hamburger" aria-label="Toggle navigation menu" aria-expanded="false">
+      <span class="hamburger-bar"></span>
+      <span class="hamburger-bar"></span>
+      <span class="hamburger-bar"></span>
+    </button>
+
+    <ul class="nav-menu" id="nav-menu">
       <li><a href="/" class="nav-item">Home</a></li>
       <li><a href="#kita" class="nav-item">Kita!</a></li>
       <li><a href="#struktur" class="nav-item">Struktur</a></li>
       <li><a href="#kontak" class="nav-item">Kontak</a></li>
     </ul>
   </nav>
+
+  <!-- Mobile Nav Backdrop Overlay -->
+  <div id="nav-backdrop" class="nav-backdrop"></div>
 
   <!-- Left Star Asset -->
   <div class="star-left">
@@ -168,5 +178,45 @@
       })();
     </script>
   <% } %>
+
+  <script>
+    // Mobile Hamburger Navigation Drawer Controller
+    (function () {
+      const hamburger = document.getElementById('nav-hamburger');
+      const navMenu = document.getElementById('nav-menu');
+      const backdrop = document.getElementById('nav-backdrop');
+
+      function toggleNav() {
+        const isOpen = navMenu.classList.toggle('active');
+        hamburger.classList.toggle('active', isOpen);
+        backdrop.classList.toggle('active', isOpen);
+        hamburger.setAttribute('aria-expanded', isOpen);
+        document.body.style.overflow = isOpen ? 'hidden' : '';
+      }
+
+      function closeNav() {
+        navMenu.classList.remove('active');
+        hamburger.classList.remove('active');
+        backdrop.classList.remove('active');
+        hamburger.setAttribute('aria-expanded', 'false');
+        document.body.style.overflow = '';
+      }
+
+      if (hamburger && navMenu && backdrop) {
+        hamburger.addEventListener('click', toggleNav);
+        backdrop.addEventListener('click', closeNav);
+
+        navMenu.querySelectorAll('.nav-item').forEach(link => {
+          link.addEventListener('click', closeNav);
+        });
+
+        document.addEventListener('keydown', (e) => {
+          if (e.key === 'Escape' && navMenu.classList.contains('active')) {
+            closeNav();
+          }
+        });
+      }
+    })();
+  </script>
 </body>
 </html>
