@@ -1,0 +1,15 @@
+{
+  "name": "irena-website",
+  "version": "1.0.0",
+  "description": "Simple Express web application",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "start": "node index.js",
+    "dev": "node --watch index.js"
+  },
+  "dependencies": {
+    "ejs": "^6.0.1",
+    "express": "^5.2.1"
+  }
+}
