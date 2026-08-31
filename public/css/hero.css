@@ -163,7 +163,8 @@
 
 .hero-welco-text .welco-suffix {
   font-family: 'Awesome Serif', serif;
-  font-size: 0.80em;
+  font-weight: 300;
+  font-size: 0.88em;
   color: #E9719B;
   margin-left: 6px;
   letter-spacing: 0.01em;
