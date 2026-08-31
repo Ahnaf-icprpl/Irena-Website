@@ -17,6 +17,33 @@
     });
   </script>
   <style>
+    @font-face {
+      font-family: 'Aston Script';
+      src: url('/fonts/aston-script.woff2') format('woff2'),
+           url('/fonts/aston-script.ttf') format('truetype');
+      font-weight: bold;
+      font-style: normal;
+      font-display: swap;
+    }
+
+    @font-face {
+      font-family: 'Relationship Of Melodrame';
+      src: url('/fonts/relationship-of-melodrame.woff2') format('woff2'),
+           url('/fonts/relationship-of-melodrame.ttf') format('truetype');
+      font-weight: 400;
+      font-style: normal;
+      font-display: swap;
+    }
+
+    @font-face {
+      font-family: 'Coolvetica';
+      src: local('Coolvetica'),
+           url('/fonts/coolvetica.woff') format('woff');
+      font-weight: 400;
+      font-style: normal;
+      font-display: swap;
+    }
+
     * {
       box-sizing: border-box;
       margin: 0;
@@ -267,6 +294,28 @@
       max-height: 85px;
     }
 
+    /* Welco Typography Accent */
+    .hero-welco-text {
+      position: absolute;
+      top: -42px;
+      left: 275px;
+      font-family: 'Relationship Of Melodrame', cursive, sans-serif;
+      font-size: 82px;
+      font-weight: 400;
+      color: #0f172a;
+      z-index: 2;
+      line-height: 1;
+      pointer-events: none;
+      user-select: none;
+    }
+
+    .hero-welco-text .welco-w {
+      font-family: 'Aston Script', cursive, sans-serif;
+      font-weight: bold;
+      font-size: 1.08em;
+      margin-right: -4px;
+    }
+
     @keyframes fadeInFromAbove {
       from {
         opacity: 0;
@@ -491,6 +540,8 @@
       <div class="hero-partial-face">
         <img src="/images/hero-partial-face.svg" alt="Hero Face Graphic">
       </div>
+      <!-- Welco Typography Accent -->
+      <div class="hero-welco-text"><span class="welco-w">W</span>elco</div>
       <!-- Horizontally Centered Rounded Rectangle (Rendered on top of Star 2) -->
       <div class="center-rounded-rect">
         <img src="/images/group-photo-hero.jpg" alt="Group Photo" class="group-photo-hero">
