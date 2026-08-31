@@ -4,7 +4,7 @@
 
 /* Container Wrapper to ensure proper z-index layering & proportional scaling */
 .card-wrapper {
-  width: 85%;
+  width: 78%;
   max-width: 960px;
   position: relative;
   display: flex;
@@ -32,6 +32,7 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
+  object-position: center center;
   border-radius: clamp(8px, 1.67cqw, 16px);
   display: block;
 }
@@ -261,59 +262,107 @@
 /* Explicit Scaled-Down Adjustments for Mobile & Small Tablets */
 @media (max-width: 768px) {
   .card-wrapper {
-    width: 90%;
+    width: 75%;
   }
   .center-rounded-rect {
-    height: clamp(220px, 55cqw, 440px);
-    padding: 14px;
-    border-radius: 18px;
+    height: clamp(220px, 62cqw, 380px);
+    aspect-ratio: 4 / 3;
+    padding: 8px;
+    border-radius: 16px;
+  }
+  .group-photo-hero {
+    object-fit: cover;
+    object-position: center 30%;
+    border-radius: 10px;
+  }
+  /* Smaller SVGs on Tablets */
+  .hero-partial-face img {
+    height: clamp(70px, 20cqw, 140px);
+  }
+  .hero-hand-holding img {
+    height: clamp(14px, 4cqw, 28px);
+  }
+  .yellow-rect-top-fade img {
+    height: clamp(20px, 5.5cqw, 42px);
+    width: clamp(160px, 60cqw, 360px);
   }
   .star-left img {
-    height: clamp(100px, 24vh, 220px);
+    height: clamp(70px, 16vh, 140px);
+  }
+  .star-2 img {
+    height: clamp(90px, 26cqw, 180px);
   }
   .star-3 img {
-    height: clamp(90px, 20vh, 200px);
+    height: clamp(65px, 14vh, 130px);
   }
   .star-4 img {
-    height: clamp(24px, 6vw, 55px);
+    height: clamp(18px, 4.5vw, 36px);
+  }
+  .corner-framing-top-right img,
+  .corner-framing-bottom-left img {
+    height: clamp(160px, 48cqw, 340px);
   }
   .corner-framing-top-right {
-    top: clamp(-65px, -9cqw, -35px);
-    right: clamp(-28px, -3.8cqw, -14px);
+    top: clamp(-45px, -6.5cqw, -25px);
+    right: clamp(-20px, -2.8cqw, -10px);
   }
   .corner-framing-bottom-left {
-    bottom: clamp(-45px, -6cqw, -22px);
-    left: clamp(-30px, -4cqw, -14px);
+    bottom: clamp(-35px, -5cqw, -18px);
+    left: clamp(-24px, -3.2cqw, -10px);
   }
 }
 
 @media (max-width: 480px) {
   .card-wrapper {
-    width: 92%;
+    width: 72%;
   }
   .center-rounded-rect {
-    height: clamp(180px, 52cqw, 270px);
-    padding: 10px;
-    border-radius: 14px;
+    height: clamp(190px, 68cqw, 280px);
+    aspect-ratio: 1 / 1;
+    padding: 5px;
+    border-radius: 10px;
+  }
+  .group-photo-hero {
+    object-fit: cover;
+    object-position: center 25%;
+    border-radius: 6px;
+  }
+  /* Even Smaller SVGs on Phones */
+  .hero-partial-face img {
+    height: clamp(55px, 17cqw, 95px);
+  }
+  .hero-hand-holding img {
+    height: clamp(11px, 3.4cqw, 18px);
+  }
+  .yellow-rect-top-fade img {
+    height: clamp(16px, 4.5cqw, 28px);
+    width: clamp(120px, 55cqw, 220px);
   }
   .star-left img {
-    height: clamp(80px, 18vh, 160px);
+    height: clamp(50px, 12vh, 90px);
+  }
+  .star-2 img {
+    height: clamp(65px, 20cqw, 110px);
   }
   .star-3 img {
-    height: clamp(75px, 16vh, 140px);
+    height: clamp(45px, 10vh, 80px);
   }
   .star-4 {
-    right: 8px;
+    right: 6px;
   }
   .star-4 img {
-    height: 32px;
+    height: 22px;
+  }
+  .corner-framing-top-right img,
+  .corner-framing-bottom-left img {
+    height: clamp(120px, 44cqw, 200px);
   }
   .corner-framing-top-right {
-    top: -28px;
-    right: -10px;
+    top: -20px;
+    right: -8px;
   }
   .corner-framing-bottom-left {
-    bottom: -20px;
-    left: -10px;
+    bottom: -15px;
+    left: -8px;
   }
 }
