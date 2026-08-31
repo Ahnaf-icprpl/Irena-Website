@@ -1,0 +1,41 @@
+/* ==========================================================================
+   Typography & Web Fonts
+   ========================================================================== */
+
+@font-face {
+  font-family: 'Awesome Serif';
+  src: url('/fonts/awesome-serif-medium.woff2') format('woff2'),
+       url('/fonts/awesome-serif-regular.woff2') format('woff2'),
+       url('/fonts/awesome-serif-medium.otf') format('opentype'),
+       url('/fonts/awesome-serif-regular.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Aston Script';
+  src: url('/fonts/aston-script.woff2') format('woff2'),
+       url('/fonts/aston-script.ttf') format('truetype');
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Relationship Of Melodrame';
+  src: url('/fonts/relationship-of-melodrame.woff2') format('woff2'),
+       url('/fonts/relationship-of-melodrame.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Coolvetica';
+  src: local('Coolvetica'),
+       url('/fonts/coolvetica.woff') format('woff');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}

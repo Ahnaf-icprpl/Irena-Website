@@ -1,0 +1,117 @@
+/* ==========================================================================
+   Layout, Reset & Navigation
+   ========================================================================== */
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: #ffffff;
+  background-image: url('/images/star-tile.png');
+  background-repeat: repeat;
+  background-size: 37px 41px;
+  background-position: top left;
+  min-height: 200vh;
+  position: relative;
+  overflow-x: hidden;
+}
+
+/* Fixed Header Navbar */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 190px;
+  /* Ultra-smooth multi-stop eased distribution */
+  background: linear-gradient(
+    to bottom,
+    #96D7FF 0%,
+    #96D7FF 20%,
+    rgba(150, 215, 255, 0.99) 25%,
+    rgba(150, 215, 255, 0.97) 30%,
+    rgba(150, 215, 255, 0.94) 35%,
+    rgba(150, 215, 255, 0.89) 41%,
+    rgba(150, 215, 255, 0.82) 47%,
+    rgba(150, 215, 255, 0.73) 54%,
+    rgba(150, 215, 255, 0.63) 61%,
+    rgba(150, 215, 255, 0.52) 68%,
+    rgba(150, 215, 255, 0.40) 75%,
+    rgba(150, 215, 255, 0.29) 82%,
+    rgba(150, 215, 255, 0.18) 88%,
+    rgba(150, 215, 255, 0.10) 93%,
+    rgba(150, 215, 255, 0.03) 97%,
+    rgba(150, 215, 255, 0) 100%
+  );
+  z-index: 1000;
+  padding: 22px 72px 0 36px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  pointer-events: none;
+}
+
+.nav-brand {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  text-decoration: none;
+  pointer-events: auto;
+}
+
+.corner-logo {
+  height: 75px;
+  width: auto;
+  object-fit: contain;
+  display: block;
+}
+
+.nav-title {
+  font-family: 'Coolvetica', 'Coolvetica Rg', 'Coolvetica Regular', sans-serif;
+  font-size: 34px;
+  font-weight: 400;
+  color: #ffffff;
+  line-height: 1;
+}
+
+.nav-menu {
+  display: flex;
+  align-items: center;
+  list-style: none;
+  gap: 32px;
+  margin-left: auto;
+  padding-top: 22px;
+  pointer-events: auto;
+}
+
+.nav-item {
+  font-family: 'Coolvetica', 'Coolvetica Rg', 'Coolvetica Regular', sans-serif;
+  font-size: 26px;
+  font-weight: 400;
+  color: #ffffff;
+  text-decoration: none;
+  line-height: 1;
+  transition: opacity 0.2s ease;
+}
+
+.nav-item:hover {
+  opacity: 0.82;
+}
+
+/* Scrollable Content Area */
+.content-area {
+  min-height: 200vh;
+  width: 100%;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 290px;
+}

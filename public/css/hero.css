@@ -1,0 +1,226 @@
+/* ==========================================================================
+   Hero Section, Card & Graphic Assets
+   ========================================================================== */
+
+/* Container Wrapper to ensure proper z-index layering */
+.card-wrapper {
+  width: 85%;
+  max-width: 960px;
+  position: relative;
+  display: flex;
+  justify-content: center;
+}
+
+/* Centered Rounded Rectangle */
+.center-rounded-rect {
+  width: 100%;
+  height: 580px;
+  background-color: #ffffff;
+  border-radius: 28px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.15), 0 0 6px rgba(0, 0, 0, 0.08);
+  position: relative;
+  z-index: 3;
+  padding: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.group-photo-hero {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 16px;
+  display: block;
+}
+
+/* Left Star Graphic (Star 1 - 50% offset, half visible) */
+@keyframes tiltStarOnLoad {
+  from {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+  to {
+    transform: translate(-50%, -50%) rotate(17deg);
+  }
+}
+
+.star-left {
+  position: absolute;
+  left: 0;
+  top: 35vh;
+  transform: translate(-50%, -50%) rotate(17deg);
+  transform-origin: center center;
+  animation: tiltStarOnLoad 1.2s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+  z-index: 10;
+  pointer-events: none;
+}
+
+.star-left img {
+  display: block;
+  height: auto;
+  max-height: 75vh;
+}
+
+/* Star 2 Graphic (Layered behind the white box) */
+@keyframes tiltStar2OnLoad {
+  from {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+  to {
+    transform: translate(-50%, -50%) rotate(17deg);
+  }
+}
+
+.star-2 {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translate(-50%, -50%) rotate(17deg);
+  transform-origin: center center;
+  animation: tiltStar2OnLoad 1.2s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.star-2 img {
+  display: block;
+  height: auto;
+  max-height: 420px;
+}
+
+/* Hero Partial Face Graphic */
+.hero-partial-face {
+  position: absolute;
+  left: 40px;
+  top: 0;
+  transform: translateY(-60%);
+  z-index: 2;
+  pointer-events: none;
+}
+
+.hero-partial-face img {
+  display: block;
+  height: auto;
+  max-height: 275px;
+}
+
+/* Hero Hand Holding Graphic (Fingers gripping top edge of card) */
+.hero-hand-holding {
+  position: absolute;
+  left: 68px;
+  top: 0;
+  transform: translateY(-39%);
+  z-index: 10;
+  pointer-events: none;
+}
+
+.hero-hand-holding img {
+  display: block;
+  height: auto;
+  max-height: 56px;
+}
+
+/* Yellow Rect Top Fade Accent */
+.yellow-rect-top-fade {
+  position: absolute;
+  top: 0;
+  left: 260px;
+  transform: translateY(-68%);
+  pointer-events: none;
+  z-index: 1;
+}
+
+.yellow-rect-top-fade img {
+  display: block;
+  width: auto;
+  max-width: 722px;
+  height: auto;
+  max-height: 85px;
+}
+
+/* Welco Typography Accent */
+.hero-welco-text {
+  position: absolute;
+  top: 0;
+  left: 275px;
+  transform: translateY(-106%);
+  font-family: 'Relationship Of Melodrame', cursive, sans-serif;
+  font-size: 100px;
+  font-weight: 400;
+  color: #848EB2;
+  z-index: 2;
+  line-height: 1;
+  pointer-events: none;
+  user-select: none;
+}
+
+.hero-welco-text .welco-w {
+  font-family: 'Aston Script', cursive, sans-serif;
+  font-weight: bold;
+  font-size: 1.08em;
+  margin-right: -4px;
+}
+
+.hero-welco-text .welco-suffix {
+  font-family: 'Awesome Serif', serif;
+  font-size: 0.80em;
+  color: #E9719B;
+  margin-left: 6px;
+  letter-spacing: 0.01em;
+  vertical-align: baseline;
+}
+
+/* Star 3 Graphic */
+@keyframes fadeInFromAbove {
+  from {
+    opacity: 0;
+    transform: translate(35%, -60%);
+  }
+  to {
+    opacity: 1;
+    transform: translate(35%, -50%);
+  }
+}
+
+.star-3 {
+  position: absolute;
+  right: 0;
+  top: 34vh;
+  transform: translate(35%, -50%);
+  animation: fadeInFromAbove 1.2s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+  z-index: 10;
+  pointer-events: none;
+}
+
+.star-3 img {
+  display: block;
+  height: auto;
+  max-height: 50vh;
+}
+
+/* Star 4 Graphic Asset */
+@keyframes fadeInFromTopRight {
+  from {
+    opacity: 0;
+    transform: translate(25px, -25px);
+  }
+  to {
+    opacity: 1;
+    transform: translate(0, 0);
+  }
+}
+
+.star-4 {
+  position: absolute;
+  right: 12vw;
+  top: 44vh;
+  animation: fadeInFromTopRight 1.2s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+  z-index: 10;
+  pointer-events: none;
+}
+
+.star-4 img {
+  display: block;
+  height: auto;
+  max-height: 120px;
+}
