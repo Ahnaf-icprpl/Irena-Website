@@ -126,7 +126,7 @@
         transform: translate(-50%, -50%) rotate(0deg);
       }
       to {
-        transform: translate(-50%, -50%) rotate(38deg);
+        transform: translate(-50%, -50%) rotate(17deg);
       }
     }
 
@@ -134,7 +134,7 @@
       position: absolute;
       left: 0;
       top: 35vh;
-      transform: translate(-50%, -50%) rotate(38deg);
+      transform: translate(-50%, -50%) rotate(17deg);
       transform-origin: center center;
       animation: tiltStarOnLoad 1.2s cubic-bezier(0.22, 1, 0.36, 1) forwards;
       z-index: 10;
@@ -155,7 +155,7 @@
       display: flex;
       flex-direction: column;
       align-items: center;
-      padding-top: 230px;
+      padding-top: 290px;
     }
 
     /* Container Wrapper to ensure proper z-index layering behind white box */
@@ -178,12 +178,23 @@
       z-index: 2;
     }
 
+    @keyframes tiltStar2OnLoad {
+      from {
+        transform: translate(-50%, -50%) rotate(0deg);
+      }
+      to {
+        transform: translate(-50%, -50%) rotate(17deg);
+      }
+    }
+
     /* Star 2 Graphic (Layered behind the white box) */
     .star-2 {
       position: absolute;
       left: 0;
       top: 50%;
-      transform: translate(-50%, -50%);
+      transform: translate(-50%, -50%) rotate(17deg);
+      transform-origin: center center;
+      animation: tiltStar2OnLoad 1.2s cubic-bezier(0.22, 1, 0.36, 1) forwards;
       z-index: 1;
       pointer-events: none;
     }
@@ -192,6 +203,22 @@
       display: block;
       height: auto;
       max-height: 420px;
+    }
+
+    /* Star 3 Graphic (Stuck to right side of page, ~65% visible, no animation) */
+    .star-3 {
+      position: absolute;
+      right: 0;
+      top: 34vh;
+      transform: translate(35%, -50%);
+      z-index: 10;
+      pointer-events: none;
+    }
+
+    .star-3 img {
+      display: block;
+      height: auto;
+      max-height: 50vh;
     }
 
     <% if (typeof env !== 'undefined' && env === 'development') { %>
@@ -336,6 +363,11 @@
   <!-- Left Star Asset -->
   <div class="star-left">
     <img src="/images/star-1.svg" alt="Star Graphic">
+  </div>
+
+  <!-- Right Star Asset (Star 3) -->
+  <div class="star-3">
+    <img src="/images/star-3.svg" alt="Star 3 Graphic">
   </div>
 
   <!-- Scrollable Content Area -->
