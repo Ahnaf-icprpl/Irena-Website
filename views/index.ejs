@@ -171,92 +171,126 @@
       z-index: 5;
     }
 
-    /* Non-intrusive Development Mode Toast */
-    .dev-toast {
+    <% if (typeof env !== 'undefined' && env === 'development') { %>
+    /* Development Environment Centered Popup Modal (Flat Rectangle, No Borders, No Rounded Corners) */
+    .dev-modal-overlay {
       position: fixed;
-      bottom: 24px;
-      right: 24px;
-      z-index: 9999;
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      background: rgba(15, 23, 42, 0.88);
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      background: rgba(15, 23, 42, 0.45);
       backdrop-filter: blur(8px);
       -webkit-backdrop-filter: blur(8px);
-      color: #f8fafc;
-      padding: 10px 16px;
-      border-radius: 100px;
-      box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.2), 0 4px 10px -2px rgba(0, 0, 0, 0.1);
-      border: 1px solid rgba(255, 255, 255, 0.15);
-      font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-      font-size: 13.5px;
-      font-weight: 500;
-      animation: devToastFadeIn 0.4s ease forwards, devToastFadeOut 0.5s ease 5.5s forwards;
-      transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s;
-    }
-
-    .dev-toast.hidden {
-      opacity: 0 !important;
-      transform: translateY(12px) !important;
-      pointer-events: none !important;
-      visibility: hidden !important;
-    }
-
-    .dev-toast-content {
-      display: flex;
-      align-items: center;
-      gap: 9px;
-    }
-
-    .dev-indicator {
-      width: 8px;
-      height: 8px;
-      background-color: #f59e0b;
-      border-radius: 50%;
-      box-shadow: 0 0 8px #f59e0b;
-    }
-
-    .dev-toast-close {
-      background: transparent;
-      border: none;
-      color: #94a3b8;
-      font-size: 18px;
-      line-height: 1;
-      cursor: pointer;
-      padding: 0 2px;
       display: flex;
       align-items: center;
       justify-content: center;
-      transition: color 0.15s ease;
+      z-index: 10000;
+      padding: 24px;
+      transition: opacity 0.35s ease, visibility 0.35s ease;
     }
 
-    .dev-toast-close:hover {
-      color: #ffffff;
+    .dev-modal-overlay.dismissed {
+      opacity: 0 !important;
+      visibility: hidden !important;
+      pointer-events: none !important;
     }
 
-    @keyframes devToastFadeIn {
+    .dev-modal-card {
+      background: #ffffff;
+      border-radius: 0;
+      border: none;
+      padding: 44px 38px 36px 38px;
+      max-width: 540px;
+      width: 100%;
+      box-shadow: 0 25px 60px -12px rgba(0, 0, 0, 0.28);
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 16px;
+      animation: modalPopIn 0.35s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    }
+
+    .dev-modal-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: #fef3c7;
+      color: #92400e;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      padding: 6px 16px;
+      border-radius: 0;
+      border: none;
+    }
+
+    .dev-modal-indicator {
+      width: 8px;
+      height: 8px;
+      background-color: #f59e0b;
+      border-radius: 0;
+      box-shadow: 0 0 8px #f59e0b;
+    }
+
+    .dev-modal-title {
+      font-family: 'Coolvetica', 'Coolvetica Rg', 'Coolvetica Regular', sans-serif;
+      font-size: 32px;
+      font-weight: 400;
+      color: #0f172a;
+      line-height: 1.15;
+      margin-top: 4px;
+    }
+
+    .dev-modal-text {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      font-size: 15.5px;
+      line-height: 1.6;
+      color: #475569;
+      margin-bottom: 8px;
+      max-width: 440px;
+    }
+
+    .dev-modal-btn {
+      background: #96D7FF;
+      color: #0f172a;
+      border: none;
+      border-radius: 0;
+      font-family: 'Coolvetica', 'Coolvetica Rg', 'Coolvetica Regular', sans-serif;
+      font-size: 22px;
+      font-weight: 400;
+      letter-spacing: 0.02em;
+      padding: 12px 48px;
+      cursor: pointer;
+      min-width: 140px;
+      box-shadow: 0 6px 20px rgba(150, 215, 255, 0.45);
+      transition: background-color 0.2s ease, transform 0.15s ease, box-shadow 0.2s ease;
+    }
+
+    .dev-modal-btn:hover {
+      background-color: #7dcbfd;
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(150, 215, 255, 0.6);
+    }
+
+    .dev-modal-btn:active {
+      transform: translateY(0);
+    }
+
+    @keyframes modalPopIn {
       from {
         opacity: 0;
-        transform: translateY(16px);
+        transform: scale(0.92) translateY(12px);
       }
       to {
         opacity: 1;
-        transform: translateY(0);
+        transform: scale(1) translateY(0);
       }
     }
-
-    @keyframes devToastFadeOut {
-      from {
-        opacity: 1;
-        transform: translateY(0);
-      }
-      to {
-        opacity: 0;
-        transform: translateY(12px);
-        visibility: hidden;
-        pointer-events: none;
-      }
-    }
+    <% } %>
   </style>
 </head>
 <body>
@@ -287,15 +321,59 @@
     <div class="center-rounded-rect"></div>
   </main>
 
-  <!-- Development Version Temporary Popup -->
+  <!-- Development Environment Notice Modal (Included ONLY when env === 'development') -->
   <% if (typeof env !== 'undefined' && env === 'development') { %>
-    <aside id="dev-toast" class="dev-toast">
-      <div class="dev-toast-content">
-        <span class="dev-indicator"></span>
-        <span>You are accessing a development version</span>
+    <div id="dev-modal-overlay" class="dev-modal-overlay">
+      <div class="dev-modal-card" role="dialog" aria-modal="true" aria-labelledby="dev-modal-title">
+        <div class="dev-modal-badge">
+          <span class="dev-modal-indicator"></span>
+          <span>Development Environment</span>
+        </div>
+        <h2 id="dev-modal-title" class="dev-modal-title">Notice</h2>
+        <p class="dev-modal-text">
+          You are accessing a <strong>development version</strong> of this website. Things are actively being built, and features might break or change without notice.
+        </p>
+        <button id="dev-modal-btn" class="dev-modal-btn" onclick="dismissDevModal()">OK (3)</button>
       </div>
-      <button class="dev-toast-close" onclick="document.getElementById('dev-toast').classList.add('hidden')" aria-label="Close">&times;</button>
-    </aside>
+    </div>
+
+    <script>
+      let devModalInterval = null;
+
+      function dismissDevModal() {
+        if (devModalInterval) {
+          clearInterval(devModalInterval);
+          devModalInterval = null;
+        }
+        const overlay = document.getElementById('dev-modal-overlay');
+        if (overlay) {
+          overlay.classList.add('dismissed');
+          setTimeout(() => {
+            overlay.remove();
+          }, 350);
+        }
+      }
+
+      // 3-second countdown timer on the OK button
+      (function startDevCountdown() {
+        let secondsLeft = 3;
+        const btn = document.getElementById('dev-modal-btn');
+        if (btn) {
+          btn.textContent = `OK (${secondsLeft})`;
+        }
+
+        devModalInterval = setInterval(() => {
+          secondsLeft -= 1;
+          if (secondsLeft > 0) {
+            if (btn) btn.textContent = `OK (${secondsLeft})`;
+          } else {
+            clearInterval(devModalInterval);
+            devModalInterval = null;
+            dismissDevModal();
+          }
+        }, 1000);
+      })();
+    </script>
   <% } %>
 </body>
 </html>
