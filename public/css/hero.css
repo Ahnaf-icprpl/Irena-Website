@@ -1,25 +1,28 @@
 /* ==========================================================================
-   Hero Section, Card & Graphic Assets (Fully Responsive & Dynamic)
+   Hero Section, Card & Graphic Assets (Dynamic SVG & Container Scaling)
    ========================================================================== */
 
-/* Container Wrapper to ensure proper z-index layering */
+/* Container Wrapper to ensure proper z-index layering & proportional scaling */
 .card-wrapper {
-  width: min(88%, 960px);
+  width: 85%;
+  max-width: 960px;
   position: relative;
   display: flex;
   justify-content: center;
+  container-type: inline-size;
+  container-name: card;
 }
 
 /* Centered Rounded Rectangle */
 .center-rounded-rect {
   width: 100%;
-  height: clamp(300px, 58vw, 580px);
+  height: clamp(260px, 60.42cqw, 580px);
   background-color: #ffffff;
-  border-radius: clamp(16px, 2.8vw, 28px);
+  border-radius: clamp(14px, 2.92cqw, 28px);
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.15), 0 0 6px rgba(0, 0, 0, 0.08);
   position: relative;
   z-index: 3;
-  padding: clamp(12px, 2.4vw, 24px);
+  padding: clamp(12px, 2.5cqw, 24px);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -29,7 +32,7 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
-  border-radius: clamp(10px, 1.8vw, 16px);
+  border-radius: clamp(8px, 1.67cqw, 16px);
   display: block;
 }
 
@@ -50,14 +53,14 @@
   transform: translate(-50%, -50%) rotate(17deg);
   transform-origin: center center;
   animation: tiltStarOnLoad 1.2s cubic-bezier(0.22, 1, 0.36, 1) forwards;
-  z-index: 10;
+  z-index: 1;
   pointer-events: none;
 }
 
 .star-left img {
   display: block;
-  height: auto;
-  max-height: clamp(240px, 65vh, 75vh);
+  width: auto;
+  height: clamp(240px, 65vh, 750px);
 }
 
 /* Star 2 Graphic (Layered behind the white box) */
@@ -83,14 +86,14 @@
 
 .star-2 img {
   display: block;
-  height: auto;
-  max-height: clamp(220px, 42vw, 420px);
+  width: auto;
+  height: clamp(180px, 43.75cqw, 420px);
 }
 
 /* Hero Partial Face Graphic */
 .hero-partial-face {
   position: absolute;
-  left: clamp(14px, 4.2vw, 40px);
+  left: clamp(16px, 4.17cqw, 40px);
   top: 0;
   transform: translateY(-60%);
   z-index: 2;
@@ -99,14 +102,14 @@
 
 .hero-partial-face img {
   display: block;
-  height: auto;
-  max-height: clamp(120px, 28vw, 275px);
+  width: auto;
+  height: clamp(115px, 28.65cqw, 275px);
 }
 
 /* Hero Hand Holding Graphic (Fingers gripping top edge of card) */
 .hero-hand-holding {
   position: absolute;
-  left: clamp(24px, 7.1vw, 68px);
+  left: clamp(27px, 7.08cqw, 68px);
   top: 0;
   transform: translateY(-39%);
   z-index: 10;
@@ -115,15 +118,15 @@
 
 .hero-hand-holding img {
   display: block;
-  height: auto;
-  max-height: clamp(24px, 5.8vw, 56px);
+  width: auto;
+  height: clamp(23px, 5.83cqw, 56px);
 }
 
 /* Yellow Rect Top Fade Accent */
 .yellow-rect-top-fade {
   position: absolute;
   top: 0;
-  left: clamp(90px, 27vw, 260px);
+  left: clamp(100px, 27.08cqw, 260px);
   transform: translateY(-68%);
   pointer-events: none;
   z-index: 1;
@@ -131,20 +134,19 @@
 
 .yellow-rect-top-fade img {
   display: block;
-  width: auto;
-  max-width: clamp(220px, 75vw, 722px);
-  height: auto;
-  max-height: clamp(36px, 8.8vw, 85px);
+  width: clamp(280px, 75.2cqw, 722px);
+  height: clamp(35px, 8.85cqw, 85px);
+  object-fit: fill;
 }
 
 /* Welco Typography Accent */
 .hero-welco-text {
   position: absolute;
   top: 0;
-  left: clamp(96px, 28.5vw, 275px);
+  left: clamp(105px, 28.65cqw, 275px);
   transform: translateY(-106%);
   font-family: 'Relationship Of Melodrame', cursive, sans-serif;
-  font-size: clamp(34px, 9.6vw, 100px);
+  font-size: clamp(38px, 10.42cqw, 100px);
   font-weight: 400;
   color: #848EB2;
   z-index: 2;
@@ -186,17 +188,17 @@
 .star-3 {
   position: absolute;
   right: 0;
-  top: clamp(26vh, 34vh, 42vh);
+  top: 34vh;
   transform: translate(35%, -50%);
   animation: fadeInFromAbove 1.2s cubic-bezier(0.22, 1, 0.36, 1) forwards;
-  z-index: 10;
+  z-index: 1;
   pointer-events: none;
 }
 
 .star-3 img {
   display: block;
-  height: auto;
-  max-height: clamp(180px, 45vh, 50vh);
+  width: auto;
+  height: clamp(160px, 45vh, 500px);
 }
 
 /* Star 4 Graphic Asset */
@@ -213,24 +215,24 @@
 
 .star-4 {
   position: absolute;
-  right: clamp(16px, 12vw, 140px);
-  top: clamp(34vh, 44vh, 50vh);
+  right: 12vw;
+  top: 44vh;
   animation: fadeInFromTopRight 1.2s cubic-bezier(0.22, 1, 0.36, 1) forwards;
-  z-index: 10;
+  z-index: 1;
   pointer-events: none;
 }
 
 .star-4 img {
   display: block;
-  height: auto;
-  max-height: clamp(48px, 11vw, 120px);
+  width: auto;
+  height: clamp(40px, 12.5cqw, 120px);
 }
 
 /* Up Right Corner Framing Graphic */
 .corner-framing-top-right {
   position: absolute;
-  top: clamp(-122px, -12.5vw, -50px);
-  right: clamp(-50px, -5.2vw, -20px);
+  top: clamp(-122px, -12.71cqw, -50px);
+  right: clamp(-50px, -5.21cqw, -20px);
   z-index: 10;
   pointer-events: none;
 }
@@ -238,15 +240,14 @@
 .corner-framing-top-right img {
   display: block;
   width: auto;
-  height: clamp(320px, 62vw, 616px);
-  max-height: none;
+  height: clamp(260px, 64.17cqw, 616px);
 }
 
 /* Down Left Corner Framing Graphic */
 .corner-framing-bottom-left {
   position: absolute;
-  bottom: clamp(-85px, -8.8vw, -35px);
-  left: clamp(-60px, -6.2vw, -24px);
+  bottom: clamp(-85px, -8.85cqw, -35px);
+  left: clamp(-60px, -6.25cqw, -24px);
   z-index: 10;
   pointer-events: none;
 }
@@ -254,6 +255,5 @@
 .corner-framing-bottom-left img {
   display: block;
   width: auto;
-  height: clamp(320px, 62vw, 616px);
-  max-height: none;
+  height: clamp(260px, 64.17cqw, 616px);
 }
